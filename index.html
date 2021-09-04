@@ -1,0 +1,227 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CLAM</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <table id="table-screen">
+        <tr>
+            <td class="td-top">
+                <div id="container-header">
+                    <div id="container-msg-testnet" class="center" hidden>Testnet!</div>
+                    <h1 class="center"><span><img src="images/logo.svg" /></span> CLAM <span><img src="images/logo.svg" /></span></h1>
+                    <h3 class="center">The fair token!</h3>
+                </div>
+                <div id="screen-connected" class="center" hidden>
+                    <div class="container"><a id="link-games-lottery" hidden> 🎫 Lottery</a><a id="link-market">🏧 Market</a> | <a id="link-help">❓ Help</a></div>
+                    <div id="container-contract" class="center container">
+                        <p>
+                            <div><b>Contract:</b>
+                                <a id="link-contract" href="" target="_blank"></a>
+                            </div>
+                            <div><b>Balance:</b> <span id="container-contract-balance">🗘</span> CLAM</div>
+                            <div><button id="btn-connect" hidden>Connect with CLAM</button></div>
+                        </p>
+
+                        <p>
+                            <div><b>Next shared:</b> <span id="container-current-stake">🗘</span> CLAM</div>
+                        </p>
+                    </div>
+
+                    <div class="center container border wrap-content">
+                        <div class="container">
+                            <div><b>Your Account:</b></div>
+                            <div id="container-address"></div>
+                        </div>
+                        <div class="container">
+                            <div><b>Your Balance:</b> <span id="container-balance">🗘</span> CLAM</div>
+                            <p>
+                                <div id="container-waiting-complete" class="center">
+                                    <div>+<b><span id="container-waiting">🗘</span> CLAM</b><br>are waiting for claim, gather now!</div>
+                                    <br>
+                                    <button id="btn-claim" hidden>🌊 Gather 🌊</button>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="center"><button id="btn-add">
+                        Add to MetaMask 
+                        <svg viewBox="0 0 40 40" color="text" width="12px" xmlns="http://www.w3.org/2000/svg" class="sc-bdnxRM fbnJlb"><path d="M36.0112 3.33337L22.1207 13.6277L24.7012 7.56091L36.0112 3.33337Z" fill="#E17726"></path><path d="M4.00261 3.33337L17.7558 13.7238L15.2989 7.56091L4.00261 3.33337Z" fill="#E27625"></path><path d="M31.0149 27.2023L27.3227 32.8573L35.2287 35.0397L37.4797 27.3258L31.0149 27.2023Z" fill="#E27625"></path><path d="M2.53386 27.3258L4.77116 35.0397L12.6772 32.8573L8.9987 27.2023L2.53386 27.3258Z" fill="#E27625"></path><path d="M12.2518 17.6496L10.0419 20.9712L17.8793 21.3281L17.6048 12.8867L12.2518 17.6496Z" fill="#E27625"></path><path d="M27.762 17.6494L22.3129 12.7905L22.1207 21.3279L29.9581 20.9711L27.762 17.6494Z" fill="#E27625"></path><path d="M12.6772 32.8574L17.3989 30.5652L13.336 27.3809L12.6772 32.8574Z" fill="#E27625"></path><path d="M22.6009 30.5652L27.3226 32.8574L26.6637 27.3809L22.6009 30.5652Z" fill="#E27625"></path><path d="M27.3226 32.8575L22.6009 30.5653L22.9715 33.6399L22.9303 34.9301L27.3226 32.8575Z" fill="#D5BFB2"></path><path d="M12.6772 32.8575L17.0694 34.9301L17.042 33.6399L17.3989 30.5653L12.6772 32.8575Z" fill="#D5BFB2"></path><path d="M17.1518 25.3495L13.2262 24.1965L15.9988 22.92L17.1518 25.3495Z" fill="#233447"></path><path d="M22.848 25.3495L24.001 22.92L26.801 24.1965L22.848 25.3495Z" fill="#233447"></path><path d="M12.6773 32.8573L13.3635 27.2023L8.99876 27.3258L12.6773 32.8573Z" fill="#CC6228"></path><path d="M26.6364 27.2023L27.3227 32.8573L31.0149 27.3258L26.6364 27.2023Z" fill="#CC6228"></path><path d="M29.9581 20.9709L22.1207 21.3278L22.8482 25.3495L24.0011 22.92L26.8012 24.1965L29.9581 20.9709Z" fill="#CC6228"></path><path d="M13.2263 24.1965L15.9989 22.92L17.1519 25.3495L17.8793 21.3278L10.0419 20.9709L13.2263 24.1965Z" fill="#CC6228"></path><path d="M10.0419 20.9709L13.3361 27.3809L13.2263 24.1965L10.0419 20.9709Z" fill="#E27525"></path><path d="M26.8011 24.1965L26.6638 27.3809L29.958 20.9709L26.8011 24.1965Z" fill="#E27525"></path><path d="M17.8793 21.3278L17.1519 25.3494L18.0715 30.0985L18.2637 23.8396L17.8793 21.3278Z" fill="#E27525"></path><path d="M22.1205 21.3278L21.7499 23.8258L21.9283 30.0985L22.848 25.3494L22.1205 21.3278Z" fill="#E27525"></path><path d="M22.848 25.3496L21.9284 30.0987L22.601 30.5654L26.6638 27.381L26.8011 24.1967L22.848 25.3496Z" fill="#F5841F"></path><path d="M13.2262 24.1967L13.336 27.381L17.3989 30.5654L18.0714 30.0987L17.1518 25.3496L13.2262 24.1967Z" fill="#F5841F"></path><path d="M22.9303 34.93L22.9715 33.6398L22.6284 33.3378H17.3714L17.042 33.6398L17.0694 34.93L12.6772 32.8574L14.2145 34.1202L17.3302 36.2751H22.6696L25.7853 34.1202L27.3226 32.8574L22.9303 34.93Z" fill="#C0AC9D"></path><path d="M22.601 30.5653L21.9284 30.0986H18.0715L17.3989 30.5653L17.0421 33.6399L17.3715 33.3379H22.6285L22.9716 33.6399L22.601 30.5653Z" fill="#161616"></path><path d="M36.5875 14.3003L37.7542 8.61779L36.011 3.33337L22.6009 13.2846L27.7618 17.6493L35.0365 19.7768L36.6424 17.8964L35.9424 17.3886L37.0679 16.3728L36.2169 15.7003L37.3287 14.863L36.5875 14.3003Z" fill="#763E1A"></path><path d="M2.24573 8.61779L3.42615 14.3003L2.67123 14.863L3.78302 15.7003L2.93202 16.3728L4.05753 17.3886L3.35752 17.8964L4.96343 19.7768L12.2518 17.6493L17.399 13.2846L4.00263 3.33337L2.24573 8.61779Z" fill="#763E1A"></path><path d="M35.0365 19.777L27.7619 17.6495L29.958 20.9712L26.6638 27.3811L31.0149 27.3262H37.4797L35.0365 19.777Z" fill="#F5841F"></path><path d="M12.2517 17.6495L4.96332 19.777L2.53386 27.3262H8.99869L13.336 27.3811L10.0419 20.9712L12.2517 17.6495Z" fill="#F5841F"></path><path d="M22.1205 21.3276L22.6009 13.2843L24.701 7.56067H15.2988L17.3988 13.2843L17.8792 21.3276L18.0577 23.8531L18.0714 30.0984H21.9283L21.9421 23.8531L22.1205 21.3276Z" fill="#F5841F"></path></svg></button></div>
+                    <div class="footer center container">
+                        <a href="https://github.com/Steak-Token" target="_blank">Github</a> | <a href="https://twitter.com/clam_token" target="_blank">Twitter</a> | <a class="link-pancake" href="" target="_blank">PancakeSwap</a>
+                    </div>
+                </div>
+
+                <div id="screen-games" class="center" hidden>
+                    <div id="game-lottery" class="center border" hidden>
+                        <div><b>🎫 CLAM Lottery</b></div>
+                        <p>
+                            <div>Last winner: <span id="games-lottery-lastwinner"></span></div>
+                            <div>Last price: <span id="games-lottery-lastprice"></span> CLAM</div>
+                        </p>
+                        <div class="border">
+                            <div><b>-- Round <span id="games-lottery-round"></span> --</b></div>
+                            <div>Players: <span id="games-lottery-players"></span></div>
+                            <div>Price: <span id="games-lottery-price"></span> CLAM</div>
+                            <div><span id="games-lottery-endsin"></span></div>
+                        </div>
+                        <p>
+                            <div id="container-lottery-playerinfo" hidden>You are participating as <span id="container-lottery-playername"></span> with <span id="container-lottery-tickets"></span> Ticket(s)</div>
+                        </p>
+
+                        <p>
+                            <div>Steak to participate: <span id="games-lottery-participate"></span> CLAM</div>
+                            <p>
+                                <div><input id="in-games-lottery-playername" placeholder="Player Name" hidden/><button id="btn-games-lottery-approve" hidden>Approve</button><button id="btn-games-lottery-participate" hidden>Participate</button></div>
+                                <div><button id="btn-games-lottery-claim" hidden>Check winner!</button></div>
+                                <div id="lottery-noplayer" hidden><b>Round is over and there was no player. Participate now and claim this rounds price for sure!</b></div>
+                            </p>
+                        </p>
+                    </div>
+                    <div class="container"><button class="btn-home">Close</button></div>
+                </div>
+
+                <div id="screen-market" class="center" hidden>
+                    <div class="border">
+                        <div><b>🏧 CLAM MARKET</b></div>
+                        <p>
+                            On this market you can buy CLAM directly with BNB.<br>All income from market is added to the <a class="link-pancake" href="" target="_blank">PancakeSwap</a> Liquidity-Pool so you can always exchange your CLAM back to BNB.
+                        </p>
+                        <p>
+                            <div>
+                                <div><b>CLAM available:</b> <span id="container-market-total-clam">🗘</span></div>
+                                <div><b>BNB available:</b> <span id="container-market-total-bnb">🗘</span></div>
+                                <div>1 BNB = <span id="container-exchange-value">🗘</span> CLAM</div>
+                            </div>
+                        </p>
+                        <p>
+                            <div><b>Buy CLAM</b></div>
+                            <table class="center">
+                                <tr>
+                                    <td class="right">CLAM</td>
+                                    <td>
+                                        <input id="in-buy-clam" value="0" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="right">BNB Price</td>
+                                    <td>
+                                        <input id="in-buy-bnb" value="0" readonly />
+                                    </td>
+                                </tr>
+                            </table>
+                            <div><button id="btn-exchange-go-clam">Exchange</button></div>
+                        </p>
+
+                        <p>
+                            <div><b>Sell CLAM</b></div>
+                            <table class="center">
+                                <tr>
+                                    <td class="right">BNB</td>
+                                    <td>
+                                        <input id="in-sell-bnb" value="0" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="right">CLAM Price</td>
+                                    <td>
+                                        <input id="in-sell-clam" value="0" readonly />
+                                    </td>
+                                </tr>
+                            </table>
+                            <div><button id="btn-exchange-go-bnb">Exchange</button></div>
+                        </p>
+                    </div>
+                    <div class="container"><button class="btn-home">Close</button></div>
+                </div>
+
+                <div id="screen-help" class="center" hidden>
+                    <div class="border">
+                        <p>
+                            <div>Our current financial system fails to balance the flow of capital from the bottom up. As the wealthy get richer and make fun excursions into space, the others get less and less. Also the crypto space at the time doesn't seem
+                                to fix this problem.</div>
+                            <div>We want to fight this problem with CLAM!</div>
+                        </p>
+                        <p>
+                            <div><b>What is CLAM?</b></div>
+                            <div>
+                                CLAM is a staking token on the Binance Smart Chain with the goal to stand against income inequality in the world. By holding CLAM in your wallet, you earn the right to gather CLAM.
+                            </div>
+                            <div>
+                                Every block on the Smart Chain, one CLAM is reserved for sharing. If the user with the most CLAM has a minimum balance of twice the gather price, the Network-Sharing will be paid by this user, if not, he pays with the half of his balance and the next
+                                wealthy user is searched to pay. This happens as long as all open sharing is payed out. The reserved CLAM will increase until someone uses the "Gather"-Button on <a href="#" onClick="window.location.reload();return false;">CLAM main page</a>.
+                                Gathering means, that CLAM reserved for sharing are going to paid out to all CLAM-Users.
+                            </div>
+                        </p>
+                        <p>
+                            <div>CLAM has a total amount of <span id="container-total">🗘</span> token.</div>
+                        </p>
+                        <div hidden>
+                            <br>
+                            <div><b>🏧 Market</b></div>
+                            <div>On the market you can buy CLAM directly with BNB. All income from market is added to the PancakeSwap Liquidity-Pool so you can always exchange your CLAM back to BNB.</div>
+                            <br>
+                            <div><b>🎫 Lottery</b></div>
+                            <div>CLAM Lotterie is coming back, soon!</div>
+                            <br>
+                            <br>
+                            <div><b>PancakeSwap</b></div>
+                            <div>If you wish to exchange your CLAM, you can do this on <a href="https://pancakeswap.info/tokens/0x" target="_blank">PancakeSwap</a>. All income that is generated flows into CLAM's liquidity!</div>
+                        </div>
+                    </div>
+                    <div class="container"><button class="btn-home">Close</button></div>
+                </div>
+
+                <div id="screen-wrong-chain" class="center" hidden>
+                    <img alt="Ethereum Logo" src="images/logo-binance-smart-chain.svg" /><br>Wrong chain, please connect to Binance Smart Chain.
+                    <br>
+                    <br>
+                    <a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" target="_blank">How to connect? Click here!</a>
+                    <br><br>
+                    <button onclick="onDisconnect(); location.reload(true);">Reload</button>
+                </div>
+
+                <div id="dialog" title="" class="hidden"></div>
+                <p id="loading" class="center" hidden>
+                    <img src="images/loading_32x32.gif" />
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <script type="text/javascript" src="js/external/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/external/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/external/aes.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@toruslabs/torus-embed"></script>
+    <!-- <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script> -->
+    <script type="text/javascript" src="js/contracts/clam.contract.js"></script>
+    <script type="text/javascript" src="js/contracts/market.contract.js"></script>
+    <script type="text/javascript" src="js/contracts/lottery.contract.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/dialog.js"></script>
+    <script type="text/javascript" src="js/connect.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/market.js"></script>
+    <script type="text/javascript" src="js/games.js"></script>
+</body>
+
+</html>
