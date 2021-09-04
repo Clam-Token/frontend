@@ -9,25 +9,17 @@ function initMarket() {
     inBuyCLAM = $("#in-buy-clam");
     inBuyBNB = $("#in-buy-bnb");
 
-    inSellCLAM = $("#in-sell-clam");
-    inSellBNB = $("#in-sell-bnb");
-
     btnExchangeCLAM = $("#btn-exchange-go-clam");
-    btnExchangeBNB = $("#btn-exchange-go-bnb");
 
     containerMarketTotalCLAM = $("#container-market-total-clam");
-    containerMarketTotalBNB = $("#container-market-total-bnb");
     containerExchangeValue = $("#container-exchange-value");
     containerMarketBNB = $("#container-market-bnb");
 }
 
 async function reloadMarketInfo() {
     marketBalanceCLAM = await market.methods.getBalanceCLAM().call();
-    marketBalanceBNB = await market.methods.getBalanceBNB().call();
     containerMarketTotalCLAM.text(fixDecimals(marketBalanceCLAM));
-    containerMarketTotalBNB.text(fixDecimals(marketBalanceBNB));
 
-    exchangeValue = await market.methods.getExchangeValue().call();
     exchangeValue = await market.methods.getExchangeValue().call();
     containerExchangeValue.text(exchangeValue);
 }
@@ -45,22 +37,12 @@ async function loadMarket() {
     inBuyCLAM.val("1000");
     calcBNB();
 
-    function calcCLAM() {
-        var value = inSellBNB.val() * exchangeValue;
-        if (value > 0.0000009) inSellCLAM.val(value);
-        else inSellCLAM.val("BNB amount to low");
-    };
-
-    inSellBNB.on("input", function() { calcCLAM() });
-    inSellBNB.val("1");
-    calcCLAM();
-
     btnExchangeCLAM.on("click", async function() {
         try {
             var sendValue = inBuyBNB.val();
             if (sendValue > 0) {
                 loading.show();
-                await market.methods.exchangeBNBtoCLAM().send({
+                await market.methods.exchange().send({
                     from: selectedAccount,
                     value: Web3.utils.toWei(sendValue, "ether")
                 });
@@ -70,30 +52,6 @@ async function loadMarket() {
         } catch (e) {
             console.log(e);
             loading.hide();
-        }
-    });
-
-    var approved = false;
-    btnExchangeBNB.text("Approve");
-    btnExchangeBNB.on("click", async function() {
-        sendValue = toBaseUnit(inSellCLAM.val(), 18, web3.utils.BN);
-        if (approved) {
-            try {
-                if (sendValue > 0) {
-                    loading.show();
-                    await market.methods.exchangeCLAMtoBNB(sendValue).send({ from: selectedAccount });
-                    loading.hide();
-                    dialog.msg("Purchase successful!", "Your purchase has been successful and your BNB has been sended!");
-                    btnExchangeBNB.text("Approve");
-                }
-            } catch (e) {
-                console.log(e);
-                loading.hide();
-            }
-
-        } else {
-            approved = await approve(sendValue);
-            if (approved) btnExchangeBNB.text("Exchange");
         }
     });
 }

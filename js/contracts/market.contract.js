@@ -5,7 +5,7 @@ var contract = contract || {};
 contract.Market = {
     abi: [{
             "inputs": [{
-                    "internalType": "address",
+                    "internalType": "address payable",
                     "name": "_owner",
                     "type": "address"
                 },
@@ -38,20 +38,9 @@ contract.Market = {
         },
         {
             "inputs": [],
-            "name": "exchangeBNBtoCLAM",
+            "name": "exchange",
             "outputs": [],
             "stateMutability": "payable",
-            "type": "function"
-        },
-        {
-            "inputs": [{
-                "internalType": "uint256",
-                "name": "value",
-                "type": "uint256"
-            }],
-            "name": "exchangeCLAMtoBNB",
-            "outputs": [],
-            "stateMutability": "nonpayable",
             "type": "function"
         },
         {
@@ -100,6 +89,6 @@ contract.Market = {
         }
     ],
 
-    address_test: "0xFECB7B913a28B48fCC25720B3bF716d8f23a4067",
+    address_test: "0x30Efb210773Cf85F720140d72A19Eca776FbaC01",
     address: ""
 };
