@@ -1,18 +1,26 @@
 * {
     font-family: 'Poppins', sans-serif;
+    color: #0f424e;
 }
 
 a {
     text-decoration: none;
-    color: #111;
+    color: #022B35;
 }
 
 ul {
     list-style: none;
 }
 
+input {
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    padding: 3px;
+}
+
 html,
 body {
+    background-color: #FDFFFF;
     min-width: 100%;
     width: 100%;
     max-width: 100%;
@@ -29,7 +37,10 @@ body {
 }
 
 button {
-    background-color: #fff;
+    border-color: #8AE4F9;
+    background-color: #8AE4F9;
+    border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 }
 
 #container-msg-testnet {
@@ -59,8 +70,14 @@ button {
 }
 
 .border {
-    border: 1px solid #000;
+    border: 2px groove #8AE4F9;
     padding: 0.5em;
+    border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+}
+
+.filled {
+    background-color: #8AE4F9;
 }
 
 .part25 {
@@ -107,20 +124,20 @@ button {
 }
 
 body::-webkit-scrollbar {
-    width: 24px;
+    width: 12px;
     /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-    background: #000;
+    background: #FDFFFF;
     /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
     background-color: #fff;
     /* color of the scroll thumb */
-    border-radius: 20px;
+    border-radius: 8px;
     /* roundness of the scroll thumb */
-    border: 3px solid #000;
+    border: 2px solid #000;
     /* creates padding around scroll thumb */
 }
