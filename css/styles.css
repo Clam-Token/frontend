@@ -138,6 +138,6 @@ body::-webkit-scrollbar-thumb {
     /* color of the scroll thumb */
     border-radius: 8px;
     /* roundness of the scroll thumb */
-    border: 2px solid #000;
+    border: 2px groove #8AE4F9;
     /* creates padding around scroll thumb */
 }
