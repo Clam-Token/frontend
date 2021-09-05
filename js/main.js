@@ -11,13 +11,13 @@ var decimals = 1000000000000000000;
 
 function initClam() {
     $(document).tooltip();
-    loadSteak();
+    loadClam();
     initMarket();
     loadMarket();
     loadLottery();
 }
 
-async function loadSteak() {
+async function loadClam() {
     loading = $("#loading");
 
     screenConnected = $("#screen-connected");
@@ -130,7 +130,7 @@ function hideAll() {
 function reloadClam() {
     clearInterval(intervalClaim);
     containerWaiting.text("0");
-    loadSteak();
+    loadClam();
 }
 
 function fixDecimals(balance) {

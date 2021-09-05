@@ -48,6 +48,7 @@ async function loadMarket() {
                 });
                 loading.hide();
                 dialog.msg("Purchase successful!", "Your purchase has been successful and your CLAM has been sended!");
+                reloadClam();
             }
         } catch (e) {
             console.log(e);
