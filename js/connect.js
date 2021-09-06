@@ -199,7 +199,7 @@ async function addToken() {
     const tokenAddress = addressClam;
     const tokenSymbol = "CLAM";
     const tokenDecimals = 18;
-    const tokenImage = "https://alkhemeia.de/clam/images/metamask-token-icon.png";
+    const tokenImage = "https://clam-token.org/images/metamask-token-icon.png";
 
     try {
         // wasAdded is a boolean. Like any RPC method, an error may be thrown.
