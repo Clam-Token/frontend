@@ -162,6 +162,7 @@ async function fetchAccountData() {
 function isCorrectChain(id) {
     if (id == MAINNET || id == TESTNET) {
         $(".td-top").css("vertical-align", "top");
+        //$("#the-fair-token").hide();
         $("#container-header").show();
         $("#screen-connected").show();
         $("#screen-wrong-chain").hide();

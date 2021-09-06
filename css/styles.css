@@ -40,7 +40,7 @@ button {
     border-color: #8AE4F9;
     background-color: #8AE4F9;
     border-radius: 8px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 }
 
 #container-msg-testnet {
@@ -73,11 +73,11 @@ button {
     border: 2px groove #8AE4F9;
     padding: 0.5em;
     border-radius: 8px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 }
 
 .filled {
-    background-color: #8AE4F9;
+    background-color: #EDFFFF;
 }
 
 .part25 {
