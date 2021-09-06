@@ -268,5 +268,9 @@ contract.Clam = {
     ],
 
     address_test: "0x469596B0B93c4F5Ec5212552f1488b363b8D0ffd",
+<<<<<<< HEAD
     address: ""
+=======
+    address: "0x4704a181455E1f364c3eFbA7aD66EdDeb93eE4bF"
+>>>>>>> cefccd8aac02b7984efcbc95210e76d7f39c090b
 };
