@@ -162,10 +162,7 @@ async function fetchAccountData() {
 function isCorrectChain(id) {
     if (id == MAINNET || id == TESTNET) {
         $(".td-top").css("vertical-align", "top");
-<<<<<<< HEAD
-=======
         //$("#the-fair-token").hide();
->>>>>>> cefccd8aac02b7984efcbc95210e76d7f39c090b
         $("#container-header").show();
         $("#screen-connected").show();
         $("#screen-wrong-chain").hide();
@@ -201,15 +198,9 @@ async function switchNetworkOffer() {
 
 async function addToken() {
     const tokenAddress = addressClam;
-<<<<<<< HEAD
-    const tokenSymbol = "STEAK";
-    const tokenDecimals = 18;
-    const tokenImage = "https://alkhemeia.de/steak/images/metamask-token-icon.png";
-=======
     const tokenSymbol = "CLAM";
     const tokenDecimals = 18;
     const tokenImage = "https://clam-token.org/images/metamask-token-icon.png";
->>>>>>> cefccd8aac02b7984efcbc95210e76d7f39c090b
 
     try {
         // wasAdded is a boolean. Like any RPC method, an error may be thrown.
